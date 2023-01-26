@@ -24,7 +24,7 @@ When signing XML fragments of the ES in the XMLDSig format, it is mandatory to u
 dotnet add package SmevTransform.NET --version 1.0.0
 ```
 
-### Использование
+### Usage
 ```csharp
 using SmevTransform.NET;
 
