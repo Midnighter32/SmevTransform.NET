@@ -82,5 +82,16 @@ namespace SmevTransform.Tests
 
             Assert.That(result, Is.GreaterThan(0));
         }
+
+        [Test]
+        public void CompareOrdinalSort()
+        {
+            var attr1 = new Attribute("Bob", "value1");
+            var attr2 = new Attribute("alice", "value2");
+
+            var result = new AttributeSortingComparator().Compare(attr1, attr2);
+
+            Assert.That(result, Is.LessThan(0));
+        }
     }
 }
