@@ -23,21 +23,22 @@ namespace SmevTransform.NET.Comparators
             if (string.IsNullOrEmpty(attr1.getUri()) && string.IsNullOrEmpty(attr2.getUri()))
             {
                 // compare attribute names
-                return attr1.getName().CompareTo(attr2.getName());
+                return string.CompareOrdinal(attr1.getName(), attr2.getName());
             }
 
             // both attributes are in unqualified form
             if (!string.IsNullOrEmpty(attr1.getUri()) && !string.IsNullOrEmpty(attr2.getUri()))
             {
                 // compare namespace
-                var nsComparsionResult = attr1.getUri().CompareTo(attr2.getUri());
+                var nsComparsionResult = string.CompareOrdinal(attr1.getUri(), attr2.getUri());
                 if (nsComparsionResult != 0)
                     return nsComparsionResult;
                 else
-                    return attr1.getName().CompareTo(attr2.getName());
+                    return string.CompareOrdinal(attr1.getName(), attr2.getName());
             }
 
             return string.IsNullOrEmpty(attr1.getUri()) ? 1 : -1;
         }
+        
     }
 }
